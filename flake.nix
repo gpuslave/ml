@@ -16,6 +16,9 @@
         packages = [
           pkgs.uv
           pkgs.python3 # interpreter for uv to build the venv on
+          pkgs.poppler # pdftoppm — pdf2image backend
+          pkgs.tesseract # OCR
+          pkgs.qpdf # PDF encryption/manipulation CLI
         ];
 
         # Let uv-installed wheels (numpy/pandas/torch .so) find libstdc++/libz
