@@ -34,4 +34,4 @@ torch is pinned to the CPU wheel index via `[tool.uv.sources]` in `pyproject.tom
 
 - Datasets are fetched at runtime with `kagglehub`, not stored in the repo.
 - Reasoning and explanations go in markdown cells; code comments stay short.
-- `notebooks/decision-tree-ensemble-gradboost.ipynb` treats Rain in Australia as a time series: split chronologically (train ≤2014, val 2015–2016, test 2017+) before fitting any preprocessing, fit the `ColumnTransformer` on train only, tune on validation, and touch test once after refitting on train+val. Imbalanced target, so models are judged by PR-AUC/ROC-AUC, precision/recall and calibration rather than accuracy.
+- `notebooks/decision-tree-ensemble-gradboost.ipynb` treats Rain in Australia as a time series: split chronologically (train ≤2015-06, val 2015-07…2016-06, test 2016-07…2017-06; data ends 2017-06-25) before fitting any preprocessing, fit the `ColumnTransformer` on train only, tune on validation, and touch test once after refitting on train+val. Imbalanced target, so models are judged by PR-AUC/ROC-AUC, precision/recall and calibration rather than accuracy.
